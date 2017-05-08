@@ -24,7 +24,8 @@ module.exports = function(grunt) {
 
         webfont: {
             options: {
-                stylesheets: ['css', 'scss']
+                stylesheets: ['css', 'scss'],
+                syntax: 'bootstrap'
             },
             unicode: {
                 src: vectorSource,

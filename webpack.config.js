@@ -3,21 +3,28 @@
 var path = require('path');
 
 module.exports = {
-    entry: ['./src/svg.js'],
+    entry: ['./src/react/demo.js'],
     output: {
-        filename: 'app.js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: path.resolve(__dirname, './dist')
+        filename: 'demo.js',
+        path: path.resolve(__dirname, './dist/react')
     },
     module: {
         loaders: [{
+            test: /\.js/,
+            exclude: /(node_modules)/,
+            loader: 'babel-loader',
+            query: {
+               presets: [
+                   'es2015',
+                   'react'
+               ]
+            }
+        },{
             test: /\.svg$/,
-            use: [{
-                loader: 'svg-sprite-loader',
-                options: {
-                    name: 'icon-[name]'
-                }
-            }]
+            loader: 'svg-sprite-loader',
+            options: {
+                name: 'icon-[name]'
+            }
         }]
     },
     plugins: [],
