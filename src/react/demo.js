@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Icon from './Icon'
+import Icon, {ICONS} from './Icon'
 
 
-const element = (
+const elements = (
     <div>
-        <Icon name="chevron"/>
+        {ICONS.map(name => (<Icon key={`icon-${name}`} name={name}/>))}
     </div>
 )
 
 ReactDOM.render(
-    element,
+    elements,
     document.getElementById('root')
 );

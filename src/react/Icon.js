@@ -1,9 +1,9 @@
-const req = require.context('../vectors');
-req.keys().map(req);
-
 import PropTypes from 'prop-types'
 import React from 'react'
 
+const req = require.context('../vectors');
+req.keys().map(req);
+export const ICONS = req.keys().map(name => /\.\/(.*)\.svg/.exec(name)[1])
 
 class Icon extends React.Component {
     propTypes: {
@@ -13,9 +13,7 @@ class Icon extends React.Component {
     render() {
         return (
             <svg>
-                <use
-                    xlinkHref={`#${this.props.name}`}
-                />
+                <use xlinkHref={`#${this.props.name}`}/>
             </svg>
         )
     }
