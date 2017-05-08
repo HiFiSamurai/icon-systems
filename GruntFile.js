@@ -1,3 +1,4 @@
+var path = require('path');
 var vectorSource = ['src/vectors/*.svg'];
 
 module.exports = function(grunt) {
@@ -35,7 +36,10 @@ module.exports = function(grunt) {
                 src: vectorSource,
                 dest: 'dist/fonts-ligature',
                 options: {
-                    ligatures: true
+                    ligatures: true,
+                    rename: function (name) {
+                        return path.basename(name).replace(/-/g, '_');
+                    }
                 }
             },
             embedded: {

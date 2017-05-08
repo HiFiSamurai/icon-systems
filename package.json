@@ -8,7 +8,7 @@
     "url": "git+https://github.com/HiFiSamurai/icon-systems.git"
   },
   "scripts": {
-    "build": "grunt clean && npm run svg && npm run webfont",
+    "build": "grunt clean && npm run svg && npm run webfont && npm run react",
     "react": "npm run webpack && copyfiles ./src/react/demo.html ./dist/react/ -f",
     "svg": "grunt svgstore",
     "webfont": "grunt webfont",

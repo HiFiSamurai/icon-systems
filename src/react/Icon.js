@@ -3,7 +3,7 @@ import React from 'react'
 
 const req = require.context('../vectors');
 req.keys().map(req);
-export const ICONS = req.keys().map(name => /\.\/(.*)\.svg/.exec(name)[1])
+export const ICONS = req.keys().map(name => /\.\/(.*)\.svg/.exec(name)[1]);
 
 class Icon extends React.Component {
     propTypes: {
