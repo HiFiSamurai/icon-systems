@@ -1,0 +1,19 @@
+{
+  "name": "icon-systems",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "grunt clean && npm run svg && npm run webfont",
+    "svg": "grunt svgstore",
+    "webfont": "grunt webfont"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-svgstore": "^1.0.0",
+    "grunt-webfont": "^1.6.0"
+  }
+}
